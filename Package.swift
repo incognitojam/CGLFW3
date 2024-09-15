@@ -63,7 +63,7 @@ let package = Package(
                 "CMakeLists.txt", "LICENSE.md", "README.md",
                 "src/CMakeLists.txt"
             ],
-            sources: sources.map("src/".appending) + ["include"],
+            sources: sources.map { "src/" + $0 } + ["include"],
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("src"),
